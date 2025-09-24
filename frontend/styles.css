@@ -1,0 +1,74 @@
+:root {
+/* Cores Principais */
+    --color-primary: #2e86de;
+    --color-secondary: #48dbfb;
+    --color-dark: #222f3e;
+    --color-light: #f5f5f5;
+    --color-white: #ffffff;
+
+/* Fonte de Texto */
+    --font-base: 'Arial', sans-serif;
+    --font-size-base: 16px;
+    --font-size-title: 24px;
+    --font-size-subtitle: 18px;
+
+/* Espaçamento Padrão */
+     --spacing-small: 0.5rem;
+     --spacing-medium: 1rem;
+     --spacing-large: 2rem;
+
+/* Espaçamento Padrão */
+    --border-radius: 5px;
+}
+
+body {
+    font-family: var(--font-base);
+    font-size: var(--font-size-base);
+    margin: 0;
+    padding: 0;
+    background: var(--color-light);
+}
+
+header {
+    background: var(--color-dark);
+    color: var(--color-white);
+    padding: var(--spacing-medium);
+}
+
+header nav a {
+    color: var(--color-white);
+    margin-right: var(--spacing-medium);
+    text-decoration: none;    
+}
+
+main {
+    padding: var(--spacing-large);
+}
+
+form {
+    background: var(--color-white);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-medium);
+}
+
+label {
+    display: block;
+    margin-top: var(--spacing-medium);
+}
+
+button {
+    margin-top: var(--spacing-medium);
+    padding: var(--spacing-small) var(--spacing-medium);
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--color-secondary);
+}
