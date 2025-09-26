@@ -68,4 +68,33 @@ function calcularTDEE(tmb, fatorAtividade) {
 function mostrarTDEE(tdee) {
     document.getElementById('tdee').textContent = `Calorias diárias sugeridas: ${tdee.toFixed(0)} kcal`;
 }
+
+function recomendarPlano(tdee, classificacao) {
+    let treino = '';
+    let dieta = '';
+
+     if (classificacao.includes('Magreza')) {
+        treino = 'Foque em treino de força (musculação), 3-5x por semana.';
+        dieta = `Aumente calorias para cerca de ${Math.round(tdee * 1.1)} kcal/dia com ênfase em proteínas.`;
+    } 
+    else if (classificacao === 'Peso normal') {
+        treino = 'Mantenha treino equilibrado: força + aeróbico.';
+        dieta = `Mantenha calorias próximas de ${Math.round(tdee)} kcal/dia com boa distribuição de macros.`;
+    } 
+    else if (classificacao === 'Sobrepeso') {
+        treino = 'Dê prioridade a treinos aeróbicos + força moderada.';
+        dieta = `Reduza calorias para cerca de ${Math.round(tdee * 0.85)} kcal/dia.`;
+    } 
+    else {
+        treino = 'Priorize caminhada, exercícios leves e acompanhamento profissional.';
+        dieta = `Reduza calorias para cerca de ${Math.round(tdee * 0.75)} kcal/dia, sempre com orientação médica.`;
+    }
+
+    return {treino, dieta};
+}
+
+function mostrarPlano(plano) {
+    document.getElementById('treino').textContent = `Sugestão de treino: ${plano.treino}`;
+    document.getElementById('dieta').textContent = `Sugestão de dieta: ${plano.dieta}`;
+}
         

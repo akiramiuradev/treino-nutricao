@@ -21,9 +21,12 @@ form.addEventListener('submit', function(event) {
     const fatorAtividade = parseFloat(document.getElementById('atividade').value);
     const tdee = calcularTDEE(tmb, fatorAtividade);
 
+    const plano = recomendarPlano(tdee, classificacao);
+
     mostrarResultados(imc, tmb);
     mostrarRecomendacao(classificacao, recomendacao);
     mostrarTDEE(tdee);
+    mostrarPlano(plano);
 
     form.reset();
 })
