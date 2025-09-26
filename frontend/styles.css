@@ -1,9 +1,9 @@
 :root {
 /* Cores Principais */
-    --color-primary: #2e86de;
-    --color-secondary: #48dbfb;
-    --color-dark: #222f3e;
-    --color-light: #f5f5f5;
+    --color-primary: #1d9414;
+    --color-secondary: #25bc1a;
+    --color-dark: #276d22;
+    --color-light: #e7e7e7;
     --color-white: #ffffff;
 
 /* Fonte de Texto */
@@ -58,6 +58,18 @@ form {
     gap: var(--spacing-medium);
     width: 90%;
     max-width: 25em;
+}
+
+#resultado-imc-tmb {
+    background: var(--color-white);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-medium);
+    width: 90%;
+    max-width: 25em;
+    margin-top: var(--spacing-medium);
 }
 
 label {

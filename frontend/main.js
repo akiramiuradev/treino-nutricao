@@ -14,8 +14,16 @@ form.addEventListener('submit', function(event) {
     
     const imc = calcularIMC(paciente.peso, paciente.altura);
     const tmb = calcularTMB(paciente.peso, paciente.altura, paciente.idade);
+    
+    const classificacao = classificarIMC(imc);
+    const recomendacao = recomendarPorIMC(classificacao);
+
+    const fatorAtividade = parseFloat(document.getElementById('atividade').value);
+    const tdee = calcularTDEE(tmb, fatorAtividade);
 
     mostrarResultados(imc, tmb);
+    mostrarRecomendacao(classificacao, recomendacao);
+    mostrarTDEE(tdee);
 
     form.reset();
 })

@@ -31,12 +31,24 @@
             <label for="altura">Altura:</label>
             <input type="number" id="altura" name="altura" required />
 
+            <label for="atividade">Nível de Atividade:</label>
+            <select id="atividade">
+                <option value="1.2">Sedentário</option>
+                <option value="1.375">Leve</option>
+                <option value="1.55">Moderado</option>
+                <option value="1.725">Intenso</option>
+                <option value="1.9">Muito Intenso</option>
+            </select>
+
             <button type="submit">Salvar</button>
         </form>
         <div id="resultado-imc-tmb">
             <h3>Resultados</h3>
             <p id="imc"></p>
             <p id="tmb"></p>
+            <p id="classificacao"></p>
+            <p id="recomendacao"></p>
+            <p id="tdee"></p>
         </div>
     </main>
 
