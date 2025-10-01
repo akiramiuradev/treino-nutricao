@@ -22,11 +22,27 @@ form.addEventListener('submit', function(event) {
     const tdee = calcularTDEE(tmb, fatorAtividade);
 
     const plano = recomendarPlano(tdee, classificacao);
+    
 
     mostrarResultados(imc, tmb);
     mostrarRecomendacao(classificacao, recomendacao);
     mostrarTDEE(tdee);
     mostrarPlano(plano);
 
+    paciente.imc = imc;
+    paciente.tmb = tmb;
+    paciente.tdee = tdee;
+    paciente.classificacao = classificacao;
+    paciente.recomendacao = recomendacao;
+    paciente.plano = plano;
+
+    pacientes.push(paciente);
+
+    localStorage.setItem('pacientes', JSON.stringify(pacientes));
+
+    atualizarListaPacientes();
+
     form.reset();
 })
+
+document.addEventListener('DOMContentLoaded', atualizarListaPacientes);

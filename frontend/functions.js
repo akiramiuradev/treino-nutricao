@@ -97,4 +97,19 @@ function mostrarPlano(plano) {
     document.getElementById('treino').textContent = `Sugestão de treino: ${plano.treino}`;
     document.getElementById('dieta').textContent = `Sugestão de dieta: ${plano.dieta}`;
 }
+
+const pacientes = JSON.parse(localStorage.getItem('pacientes')) || [];
+
+function atualizarListaPacientes() {
+    const lista = document.getElementById('lista-pacientes');
+    if (!lista) return;
+    lista.innerHTML = '';
+
+    pacientes.forEach((p, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${index + 1}. ${p.nome} - IMC: ${p.imc.toFixed(2)} (${p.classificacao})`;
+        lista.appendChild(li);
+    });
+}
+
         
